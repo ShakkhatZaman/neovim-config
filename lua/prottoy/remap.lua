@@ -2,14 +2,6 @@
 vim.keymap.set("n", "<leader>fx", vim.cmd.Ex, {desc = "Open Net-rw explorer"})
 vim.keymap.set('n', '\\', '<Cmd>Neotree toggle<CR>', {desc = "Toggle Neotree"})
 
--- Toggleterm
-vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], {desc = "Normal mode in Toggleterm"})
-vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]])
-vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]])
-vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]])
-vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]])
-vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]])
-
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>t', "<Cmd>Telescope<CR>", {desc = "Open Telescope"})

@@ -41,8 +41,6 @@ local plugins = {
     },
     -- Indent lines
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, lazy = true },
-    -- Toggletrerm 
-    { 'akinsho/toggleterm.nvim', version = "*", config = true },
     -- LSP 
     {
         -- Mason 
