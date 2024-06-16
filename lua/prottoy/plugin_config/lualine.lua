@@ -45,6 +45,19 @@ local ll_theme = function()
     }
 end
 
+local undotree_extension = {
+    sections = {
+        lualine_a = {
+            function()
+                local filetype = vim.opt_local.filetype:get()
+                return (filetype == 'undotree') and 'Undo Tree' or (filetype == 'undotreeDiff') and 'Undotree Diff'
+            end
+        },
+        lualine_z = { 'location' }
+    },
+    filetypes = { "undotree", "undotreeDiff" }
+}
+
 require('lualine').setup({
     options = {
         icons_enabled = true,
@@ -52,7 +65,7 @@ require('lualine').setup({
         component_separators = { left = '',--[[  right = '🗿'},-- ]] right = '│'},
         -- component_separators = { left = '', right = '' },
         section_separators = { left = '', right = ''},
-        -- section_separators = { left = '', right = '' },
+        -- section_separators = { left = '', right = '' },
         disabled_filetypes = {
             statusline = {},
             winbar = {},
@@ -61,7 +74,7 @@ require('lualine').setup({
         always_divide_middle = true,
         globalstatus = false,
         refresh = {
-            statusline = 1000,
+            statusline = 300,
             tabline = 1000,
             winbar = 1000,
         }
@@ -81,8 +94,8 @@ require('lualine').setup({
             {'filename',
                 symbols = {
                     modified = '',
-                    readonly = '🗿',
-                    -- readonly = '',
+                    -- readonly = '🗿',
+                    readonly = '',
                     alternate_file = '#',
                     directory =  '',
                 },
@@ -99,8 +112,8 @@ require('lualine').setup({
             {'filename',
                 symbols = {
                     modified = '',
-                    readonly = '🗿',
-                    -- readonly = '',
+                    -- readonly = '🗿',
+                    readonly = '',
                 }
             }
         },
@@ -114,6 +127,6 @@ require('lualine').setup({
     --lualine_b = {{"filename", path = 1}}
     --},
     inactive_winbar = {},
-    extensions = {'neo-tree', 'toggleterm', 'trouble'}
+    extensions = { 'neo-tree', 'trouble', undotree_extension }
 })
 

@@ -44,7 +44,6 @@ dashboard.section.buttons.val = {
     dashboard.button( "o",  "  Recent"   ,     ":Telescope oldfiles<CR>"),
     dashboard.button( "s",  "  Settings" ,     ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
     dashboard.button( "q",  "󰗼  Quit NeoVIM ",  ":qa<CR>"),
-    dashboard.button( "t",  "  Terminal ",     ":ToggleTerm<CR>"),
     dashboard.button( "F",  "󰙅  File tree",     ":Neotree<CR>"),
 }
 

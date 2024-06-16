@@ -1,5 +1,4 @@
 require("prottoy.plugins")
-require('impatient')
 require("prottoy.plugin_config.tokyonight")
 require("prottoy.plugin_config.alpha_nvim")
 require("prottoy.plugin_config.treesitter")

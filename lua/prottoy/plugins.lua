@@ -13,8 +13,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    -- Impatient
-    'lewis6991/impatient.nvim',
     -- Startup screen
     'goolord/alpha-nvim',
     -- Telescope
@@ -40,7 +38,15 @@ local plugins = {
         dependencies = { "MunifTanjim/nui.nvim" }
     },
     -- Indent lines
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, lazy = true },
+    {
+        "shellRaining/hlchunk.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+    },
+    -- Undotree
+    {
+        "jiaoshijie/undotree",
+        dependencies = "nvim-lua/plenary.nvim",
+    },
     -- LSP 
     {
         -- Mason 
@@ -49,8 +55,11 @@ local plugins = {
         "williamboman/mason-lspconfig.nvim",
         -- Lsp config
         "neovim/nvim-lspconfig",
-        --"ranjithshegde/ccls.nvim"
-        "folke/trouble.nvim",
+        -- Trouble
+        {
+            "folke/trouble.nvim",
+            opts = {}, cmd = "Trouble"
+        },
     },
     -- Autocomplete
     {
@@ -63,7 +72,7 @@ local plugins = {
         "saadparwaiz1/cmp_luasnip",
         { 'windwp/nvim-autopairs', event = "InsertEnter", }
     },
-    { 'numToStr/Comment.nvim', lazy = false, }
+    { "tpope/vim-commentary" }
 }
 
 local opts = {}

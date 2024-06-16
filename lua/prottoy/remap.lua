@@ -11,5 +11,12 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {desc = "Find buffers"})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {desc= "Get Help tags"})
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {desc = "Find old files"})
 
+-- Undotree
+vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = true, desc = "Undotree Toggle" })
+
 -- Trouble
-vim.keymap.set("n", "<leader>ad", function() require("trouble").toggle() end, {desc = "Open Trouble.nvim"})
+vim.keymap.set("n", "<leader>ad", "<cmd>Trouble diagnostics toggle<cr>", {desc = "Open Trouble.nvim"})
+
+--Terminal
+vim.keymap.set('n', "<C-\\>", "<Cmd>terminal<CR>", {desc = "Open Terminal"})
+vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], {desc = "Normal mode in Terminal"})

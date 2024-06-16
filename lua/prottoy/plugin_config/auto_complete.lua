@@ -50,5 +50,6 @@ cmp.setup({
 require('nvim-autopairs').setup({
     disable_filetype = { "TelescopePrompt", "spectre_panel" },
     map_cr = true,
+    fast_wrap = {},
 })
 
