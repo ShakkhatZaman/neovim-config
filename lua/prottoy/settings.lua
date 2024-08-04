@@ -13,12 +13,19 @@ vim.opt.expandtab = true
 vim.wo.number = true
 vim.wo.relativenumber= true
 vim.opt.wrap = false
-vim.api.nvim_set_hl(0, 'LineNr', {fg = "#7022a1"})
+vim.api.nvim_set_hl(0, 'LineNrAbove', {fg = "#7022a1"})
+vim.api.nvim_set_hl(0, 'LineNrBelow', {fg = "#7022a1"})
+vim.api.nvim_set_hl(0, 'LineNr', {fg = "#9046b3"})
+vim.api.nvim_set_hl(0, 'Whitespace', {fg = "#6f779b"})
 
 -- Backups and undo
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
+
+--Listchars
+vim.opt.list = true
+vim.opt.listchars = { tab = '  ', trail = '󰧞'}
 
 -- Searching
 vim.opt.hlsearch = false
