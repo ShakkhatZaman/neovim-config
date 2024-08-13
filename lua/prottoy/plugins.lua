@@ -22,7 +22,7 @@ local plugins = {
     },
     -- Colorshceme
     { "folke/tokyonight.nvim", lazy = false, priority = 1000, opts = {} },
-    -- Deviocons
+    -- Devicons
     "nvim-tree/nvim-web-devicons",
     {
         -- Lualine
@@ -35,23 +35,25 @@ local plugins = {
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
-        dependencies = { "MunifTanjim/nui.nvim" }
+        dependencies = { "MunifTanjim/nui.nvim" },
     },
     -- Indent lines
     {
         "shellRaining/hlchunk.nvim",
+        opts = require("prottoy.plugin_config.others").hlchunk_opts,
         event = { "BufReadPre", "BufNewFile" },
     },
     -- Undotree
     {
         "jiaoshijie/undotree",
         dependencies = "nvim-lua/plenary.nvim",
+        opts = { float_diff = false },
     },
-    -- LSP 
+    -- LSP
     {
-        -- Mason 
+        -- Mason
         "williamboman/mason.nvim",
-        -- mason lasp config,
+        -- mason lsp config,
         "williamboman/mason-lspconfig.nvim",
         -- Lsp config
         "neovim/nvim-lspconfig",
@@ -70,9 +72,16 @@ local plugins = {
         -- "hrsh7th/cmp-nvim-lu"hrsh7th/cmp-nvim-lua",
         { "L3MON4D3/LuaSnip", dependencies = { "rafamadriz/friendly-snippets" } },
         "saadparwaiz1/cmp_luasnip",
-        { 'windwp/nvim-autopairs', event = "InsertEnter", }
+        {
+            'windwp/nvim-autopairs', event = "InsertEnter",
+            opts = require("prottoy.plugin_config.others").nvim_autopairs_opts
+        }
     },
-    { "tpope/vim-commentary" }
+    -- Comment.nvim
+    {
+        "numToStr/Comment.nvim", opts = {},
+        event = { "BufReadPre", "BufNewFile" }
+    },
 }
 
 local opts = {}

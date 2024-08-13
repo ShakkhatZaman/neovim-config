@@ -55,6 +55,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local c_compiler_path = "C:\\msys64\\mingw64\\bin\\gcc.exe,C:\\msys64\\mingw64\\bin\\cc.exe"
 local cpp_compiler_path = "C:\\msys64\\mingw64\\bin\\g++.exe,C:\\msys64\\mingw64\\bin\\cpp.exe"
+-- local pyrightconfig_path = "C:\\Users\\Prottoy\\pyrightconfig.json"
 
 require("mason-lspconfig").setup_handlers({
     function(server_name)
@@ -70,6 +71,15 @@ require("mason-lspconfig").setup_handlers({
             cmd = {
                 "clangd",
                 "--query-driver=" .. c_compiler_path .. "," .. cpp_compiler_path,
+            }
+        }
+    end,
+    ['basedpyright'] = function ()
+        require("lspconfig").basedpyright.setup{
+            capabilities = capabilities,
+            on_attach = lsp_on_attach,
+            settings = {
+                basedpyright = { typeCheckingMode = "standard" }
             }
         }
     end

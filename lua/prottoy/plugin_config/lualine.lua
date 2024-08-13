@@ -127,6 +127,5 @@ require('lualine').setup({
     --lualine_b = {{"filename", path = 1}}
     --},
     inactive_winbar = {},
-    extensions = { 'neo-tree', 'trouble', undotree_extension }
+    extensions = { 'neo-tree', 'trouble', 'mason', undotree_extension }
 })
-

@@ -20,3 +20,7 @@ vim.keymap.set("n", "<leader>ad", "<cmd>Trouble diagnostics toggle<cr>", {desc =
 --Terminal
 vim.keymap.set('n', "<C-\\>", "<Cmd>terminal<CR>", {desc = "Open Terminal"})
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], {desc = "Normal mode in Terminal"})
+
+--Tab visual selection
+vim.keymap.set('v', "<Tab>", ">gv", {desc = "Add tab to visual selection"})
+vim.keymap.set('v', "<S-Tab>", "<gv", {desc = "Remove tab from visual selection"})

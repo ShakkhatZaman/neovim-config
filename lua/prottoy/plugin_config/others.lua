@@ -1,21 +1,16 @@
--- Telescope
-require("telescope").setup()
-
--- Indent blank line
--- require("ibl").setup({ indent = { char = '┊' } })
-
--- Comment
--- require("Comment").setup()
-
---Undotree lua
-require('undotree').setup({ float_diff = false })
-
-require('hlchunk').setup({
+local hlchunk_opts = {
     indent = {
         enable = true,
         chars = {'│'}
     },
-    chunk = {
-        enable = true
-    }
-})
+    chunk = { enable = true }
+}
+local nvim_autopairs_opts = {
+    disable_filetype = { "TelescopePrompt", "spectre_panel" },
+    map_cr = true,
+    fast_wrap = {},
+}
+return {
+    hlchunk_opts = hlchunk_opts,
+    nvim_autopairs_opts = nvim_autopairs_opts
+}
