@@ -49,7 +49,7 @@ local undotree_extension = {
     sections = {
         lualine_a = {
             function()
-                local filetype = vim.opt_local.filetype:get()
+                local filetype = vim.opt_local.filetype
                 return (filetype == 'undotree') and 'Undo Tree' or (filetype == 'undotreeDiff') and 'Undotree Diff'
             end
         },

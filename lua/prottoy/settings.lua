@@ -28,6 +28,16 @@ vim.opt.undofile = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '  ', trail = '󰧞'}
 
+--Diagnostic signs
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "󰅚 ", [vim.diagnostic.severity.WARN] = "󰀪 ",
+            [vim.diagnostic.severity.HINT] = "󰌶", [vim.diagnostic.severity.INFO] = " "
+        },
+    },
+})
+
 -- Searching
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
@@ -54,4 +64,3 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     pattern = {"*.vert", "*.frag", "*.tesc", "*.tese", "*.geom", "*.comp"},
     command = "set filetype=glsl"
 })
-
